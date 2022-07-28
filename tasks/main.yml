@@ -1,0 +1,28 @@
+---
+# tasks file for redis
+
+- name: Install httpd
+  dnf:
+    name: httpd
+    state: present
+  become: true
+  become_method: sudo
+
+- name: Install rsyslog latest
+  dnf:
+    name: rsyslog
+    state: latest
+  become: true
+  become_method: sudo
+
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: ../files/racdata.conf
+    dest: /etc/rsyslog.d/racdata.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  become_method: sudo
+  notify:
+    - Restart rsyslog

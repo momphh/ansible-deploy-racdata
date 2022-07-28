@@ -1,0 +1,9 @@
+---
+# handlers file for redis
+
+- name: Restart rsyslog
+  ansible.builtin.service:
+    name: rsyslog
+    state: restarted
+  become: true
+  become_method: sudo
