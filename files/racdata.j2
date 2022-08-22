@@ -25,7 +25,7 @@ ruleset(name="racdata") {
 
   action(
     type="omrelp"
-    target={{ racdata_server }}
+    target="{{ racdata_server }}"
     port="20514"
     template="json"
     queue.type="linkedlist"
