@@ -17,7 +17,7 @@
   become: true
   become_method: sudo
 
-- name: Copy file with owner and permissions
+- name: Copy file rsyslog.conf with owner and permissions
   ansible.builtin.copy:
     src: ../files/rsyslog.conf
     dest: /etc/rsyslog.d/rsyslog.conf
@@ -28,7 +28,7 @@
   become: true
   become_method: sudo
 
-- name: Copy file with owner and permissions
+- name: Copy file legacy_files.conf with owner and permissions
   ansible.builtin.copy:
     src: ../files/legacy_files.conf
     dest: /etc/rsyslog.d/legacy_files.conf
@@ -38,9 +38,9 @@
   become: true
   become_method: sudo
 
-- name: Copy file with owner and permissions
-  ansible.builtin.copy:
-    template: ../files/racdata.j2
+- name: apply template file with owner and permissions
+  template: 
+    src: ../files/racdata.j2
     dest: /etc/rsyslog.d/racdata.conf
     owner: root
     group: root
