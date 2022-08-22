@@ -24,31 +24,31 @@
       - name: Check if rsyslog.conf exists
     stat:
       path: "/etc/rsyslog.d/rsyslog.conf"
-    register: file_data
+    register: file_data2
   
   - name: Report if racdata.conf exists
     debug:
       msg: "The file exists"
-    when: file_data.stat.exists
+    when: file_data2.stat.exists
 
   - name: Report if racdata.conf not exists
     debug:
       msg: "The file not exists"
-    when: not file_data.stat.exists
+    when: not file_data2.stat.exists
 
 
       - name: Check if racdata.conf exists
     stat:
       path: "/etc/rsyslog.d/legacy_files.conf"
-    register: file_data
+    register: file_data3
   
   - name: Report if racdata.conf exists
     debug:
       msg: "The file exists"
-    when: file_data.stat.exists
+    when: file_data3.stat.exists
 
   - name: Report if racdata.conf not exists
     debug:
       msg: "The file not exists"
-    when: not file_data.stat.exists
+    when: not file_data3.stat.exists
       
