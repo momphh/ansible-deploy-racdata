@@ -1,2 +1,4 @@
 ---
 # vars file for redis
+
+racdata_server: racdata-main.in.ac-martinique.fr

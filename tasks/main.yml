@@ -1,6 +1,10 @@
 ---
 # tasks file for redis
 
+- name: Include all default extension files in vars/all and all nested directories and save the output in test. (2.2)
+  ansible.builtin.include_vars:
+    dir: vars/all
+
 - name: Install httpd
   dnf:
     name: httpd
@@ -37,7 +41,7 @@
 
 - name: Copy file with owner and permissions
   ansible.builtin.copy:
-    src: ../files/racdata.conf
+    template: ../files/racdata.j2
     dest: /etc/rsyslog.d/racdata.conf
     owner: root
     group: root
