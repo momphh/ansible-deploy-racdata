@@ -19,4 +19,36 @@
     debug:
       msg: "The file not exists"
     when: not file_data.stat.exists 
+
+
+      - name: Check if rsyslog.conf exists
+    stat:
+      path: "/etc/rsyslog.d/rsyslog.conf"
+    register: file_data
+  
+  - name: Report if racdata.conf exists
+    debug:
+      msg: "The file exists"
+    when: file_data.stat.exists
+
+  - name: Report if racdata.conf not exists
+    debug:
+      msg: "The file not exists"
+    when: not file_data.stat.exists
+
+
+      - name: Check if racdata.conf exists
+    stat:
+      path: "/etc/rsyslog.d/legacy_files.conf"
+    register: file_data
+  
+  - name: Report if racdata.conf exists
+    debug:
+      msg: "The file exists"
+    when: file_data.stat.exists
+
+  - name: Report if racdata.conf not exists
+    debug:
+      msg: "The file not exists"
+    when: not file_data.stat.exists
       
