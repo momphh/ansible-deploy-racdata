@@ -1,9 +1,7 @@
 ---
 # tasks file for redis
 
-- name: Include all default extension files in vars/all and all nested directories and save the output in test. (2.2)
-  ansible.builtin.include_vars:
-    dir: vars/all
+- include_vars: ../vars/main.yml
 
 - name: Install httpd
   dnf:
