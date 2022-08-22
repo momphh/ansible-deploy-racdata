@@ -15,6 +15,26 @@
   become: true
   become_method: sudo
 
+  - name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: ../files/rsyslog.conf
+    dest: /etc/rsyslog.d/rsyslog.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  become_method: sudo
+
+  - name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: ../files/legacy_files.conf
+    dest: /etc/rsyslog.d/legacy_files.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  become_method: sudo
+
 - name: Copy file with owner and permissions
   ansible.builtin.copy:
     src: ../files/racdata.conf
