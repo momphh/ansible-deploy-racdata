@@ -20,7 +20,7 @@
 - name: Copy file rsyslog.conf with owner and permissions
   ansible.builtin.copy:
     src: ../files/rsyslog.conf
-    dest: /etc/rsyslog.d/rsyslog.conf
+    dest: /etc/rsyslog.conf
     owner: root
     group: root
     mode: '0644'
