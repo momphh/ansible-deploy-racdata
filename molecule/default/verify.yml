@@ -23,7 +23,7 @@
 
   - name: Check if rsyslog.conf exists
     stat:
-      path: "/etc/rsyslog.d/rsyslog.conf"
+      path: "/etc/rsyslog.conf"
     register: file_data2
   
   - name: Report if rsyslog.conf exists
