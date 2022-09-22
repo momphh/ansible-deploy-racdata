@@ -9,6 +9,7 @@
     state: present
   become: true
   become_method: sudo
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'  or ansible_distribution == ‘Rocky Linux’ and  ansible_distribution_major_version == ‘8’
 
 - name: Install rsyslog latest
   dnf:
@@ -16,6 +17,7 @@
     state: latest
   become: true
   become_method: sudo
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'  or ansible_distribution == ‘Rocky Linux’ and  ansible_distribution_major_version == ‘8’
 
 - name: Copy file rsyslog.conf with owner and permissions
   ansible.builtin.copy:
@@ -27,6 +29,7 @@
     backup: yes
   become: true
   become_method: sudo
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'  or ansible_distribution == ‘Rocky Linux’ and  ansible_distribution_major_version == ‘8’
 
 - name: Copy file legacy_files.conf with owner and permissions
   ansible.builtin.copy:
@@ -37,6 +40,7 @@
     mode: '0644'
   become: true
   become_method: sudo
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'  or ansible_distribution == ‘Rocky Linux’ and  ansible_distribution_major_version == ‘8’
 
 - name: apply template file with owner and permissions
   template: 
@@ -47,5 +51,6 @@
     mode: '0644'
   become: true
   become_method: sudo
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'  or ansible_distribution == ‘Rocky Linux’ and  ansible_distribution_major_version == ‘8’
   notify:
     - Restart rsyslog
