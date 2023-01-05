@@ -3,14 +3,6 @@
 
 - include_vars: ../vars/main.yml
 
-- name: Install httpd
-  dnf:
-    name: httpd
-    state: present
-  become: true
-  become_method: sudo
-  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Rocky'
-
 - name: Install rsyslog latest
   dnf:
     name: rsyslog
