@@ -34,6 +34,61 @@
   become_method: sudo
   when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Rocky'
 
+- name: Copy file http-ssl-access.conf with owner and permissions
+  ansible.builtin.copy:
+    src: ../files/http-ssl-access.conf
+    dest: /etc/rsyslog.d/http-ssl-access.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  become_method: sudo
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Rocky'
+
+- name: Copy file http-ssl-request.conf with owner and permissions
+  ansible.builtin.copy:
+    src: ../files/http-ssl-request.conf
+    dest: /etc/rsyslog.d/http-ssl-request.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  become_method: sudo
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Rocky'
+
+- name: Copy file http-ssl-error.conf with owner and permissions
+  ansible.builtin.copy:
+    src: ../files/http-ssl-error.conf
+    dest: /etc/rsyslog.d/http-ssl-error.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  become_method: sudo
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Rocky'
+
+- name: Copy file http-access.conf with owner and permissions
+  ansible.builtin.copy:
+    src: ../files/http-access.conf
+    dest: /etc/rsyslog.d/http-access.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  become_method: sudo
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Rocky'
+
+- name: Copy file http-error.conf with owner and permissions
+  ansible.builtin.copy:
+    src: ../files/http-error.conf
+    dest: /etc/rsyslog.d/http-error.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  become_method: sudo
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Rocky'
+
 - name: apply template file with owner and permissions
   template: 
     src: ../files/racdata.j2
