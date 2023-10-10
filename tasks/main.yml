@@ -9,7 +9,7 @@
     state: latest
   become: true
   become_method: sudo
-  when:  ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Entreprise'
+  when:  ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Enterprise'
 
 - name: Copy file rsyslog.conf with owner and permissions
   ansible.builtin.copy:
@@ -21,7 +21,7 @@
     backup: yes
   become: true
   become_method: sudo
-  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Entreprise'
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Enterprise'
 
 - name: Copy file legacy_files.conf with owner and permissions
   ansible.builtin.copy:
@@ -32,7 +32,7 @@
     mode: '0644'
   become: true
   become_method: sudo
-  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Entreprise'
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Enterprise'
 
 - name: Copy file http-ssl-access.conf with owner and permissions
   ansible.builtin.copy:
@@ -43,7 +43,7 @@
     mode: '0644'
   become: true
   become_method: sudo
-  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Entreprise'
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Enterprise'
 
 - name: Copy file http-ssl-request.conf with owner and permissions
   ansible.builtin.copy:
@@ -54,7 +54,7 @@
     mode: '0644'
   become: true
   become_method: sudo
-  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Entreprise'
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Enterprise'
 
 - name: Copy file http-ssl-error.conf with owner and permissions
   ansible.builtin.copy:
@@ -65,7 +65,7 @@
     mode: '0644'
   become: true
   become_method: sudo
-  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Entreprise'
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Enterprise'
 
 - name: Copy file http-access.conf with owner and permissions
   ansible.builtin.copy:
@@ -76,7 +76,7 @@
     mode: '0644'
   become: true
   become_method: sudo
-  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Entreprise'
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Enterprise'
 
 - name: Copy file http-error.conf with owner and permissions
   ansible.builtin.copy:
@@ -87,7 +87,7 @@
     mode: '0644'
   become: true
   become_method: sudo
-  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Entreprise'
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Enterprise'
 
 - name: apply template file with owner and permissions
   template: 
@@ -98,6 +98,6 @@
     mode: '0644'
   become: true
   become_method: sudo
-  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Entreprise'
+  when: ansible_distribution_major_version == '8' and ansible_distribution|string =='Red Hat Enterprise'
   notify:
     - Restart rsyslog
